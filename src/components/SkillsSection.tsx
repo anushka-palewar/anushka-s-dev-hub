@@ -2,33 +2,28 @@ import { Server, Layout, Database, Brain, Settings } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: 'Backend Development',
+    title: 'backend',
     icon: Server,
-    color: 'from-cyan-500 to-blue-500',
     skills: ['Java (Core & Advanced)', 'Spring Boot', 'Spring Security', 'REST APIs', 'JDBC', 'Servlets & JSP'],
   },
   {
-    title: 'Frontend Development',
+    title: 'frontend',
     icon: Layout,
-    color: 'from-violet-500 to-purple-500',
     skills: ['HTML', 'CSS', 'JavaScript', 'React (Basics)'],
   },
   {
-    title: 'Database',
+    title: 'database',
     icon: Database,
-    color: 'from-emerald-500 to-teal-500',
     skills: ['SQL', 'MySQL'],
   },
   {
-    title: 'Machine Learning',
+    title: 'ml',
     icon: Brain,
-    color: 'from-rose-500 to-pink-500',
     skills: ['ML Fundamentals', 'Text Preprocessing', 'TF-IDF', 'Naive Bayes', 'Flask Deployment'],
   },
   {
-    title: 'Core CS & Tools',
+    title: 'tools',
     icon: Settings,
-    color: 'from-amber-500 to-orange-500',
     skills: ['Data Structures & Algorithms', 'OOPs', 'DBMS', 'GitHub', 'VS Code'],
   },
 ];
@@ -37,52 +32,47 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="section-padding bg-background">
       <div className="container-custom">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Technical <span className="text-gradient">Skills</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Technologies and tools I work with to bring ideas to life
-            </p>
-            <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-4" />
-          </div>
+        {/* Section Header */}
+        <div className="mb-12">
+          <p className="text-primary text-sm mb-2">{'// SECTION'}</p>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            tech_stack<span className="text-primary">()</span>
+          </h2>
+          <p className="text-muted-foreground mt-2">Technologies and tools I work with</p>
+          <div className="w-24 h-1 bg-foreground mt-4"></div>
+        </div>
 
-          {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillCategories.map((category, index) => (
-              <div
-                key={category.title}
-                className="group relative p-6 bg-card rounded-2xl border border-border hover:border-primary/30 transition-all duration-300 card-hover overflow-hidden"
-              >
-                {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-                
-                <div className="relative z-10">
-                  {/* Icon and Title */}
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${category.color} text-white shadow-lg`}>
-                      <category.icon size={22} />
-                    </div>
-                    <h3 className="text-lg font-semibold">{category.title}</h3>
-                  </div>
-
-                  {/* Skills */}
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1.5 text-sm bg-muted text-muted-foreground rounded-lg font-medium hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+        {/* Skills Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category, index) => (
+            <div
+              key={category.title}
+              className="terminal-box group hover:translate-x-1 hover:-translate-y-1 transition-transform"
+            >
+              {/* Icon and Title */}
+              <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border">
+                <div className="p-2 border-2 border-foreground">
+                  <category.icon size={20} />
                 </div>
+                <h3 className="font-bold uppercase tracking-wider">{category.title}</h3>
               </div>
-            ))}
-          </div>
+
+              {/* Skills */}
+              <div className="space-y-2">
+                {category.skills.map((skill, i) => (
+                  <div
+                    key={skill}
+                    className="flex items-center gap-2 text-sm"
+                  >
+                    <span className="text-primary">{'>'}</span>
+                    <span className="text-muted-foreground hover:text-foreground transition-colors">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
