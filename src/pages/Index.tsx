@@ -6,6 +6,8 @@ import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import EducationSection from '@/components/EducationSection';
 import ContactSection from '@/components/ContactSection';
+import GithubActivity from '@/components/GithubActivity';
+import Terminal from '@/components/Terminal';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -30,15 +32,17 @@ const Index = () => {
         <link rel="canonical" href="https://anushkapalewar.dev" />
       </Helmet>
 
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-background">
         <Navbar />
         <main>
           <HeroSection />
           <AboutSection />
           <SkillsSection />
+          <GithubActivity />
           <ProjectsSection />
           <EducationSection />
           <ContactSection />
+          <Terminal />
         </main>
         <Footer />
       </div>
@@ -47,3 +51,4 @@ const Index = () => {
 };
 
 export default Index;
+
