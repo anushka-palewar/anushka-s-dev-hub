@@ -11,20 +11,20 @@ const socialLinks = [
   {
     name: 'LinkedIn',
     icon: Linkedin,
-    href: 'https://linkedin.com/in/anushkapalewar',
-    handle: '/in/anushka',
+    href: 'https://www.linkedin.com/in/anushka-palewar/',
+    handle: '@anushka-palewar',
   },
   {
     name: 'LeetCode',
     icon: Code2,
-    href: 'https://leetcode.com/anushka_palewar',
-    handle: '@anushka',
+    href: 'https://leetcode.com/u/Anushka_Palewar/',
+    handle: '@Anushka_Palewar',
   },
   {
     name: 'Email',
     icon: Mail,
-    href: 'mailto:anushka@example.com',
-    handle: 'anushka@example.com',
+    href: 'mailto:anushkapalewar@gmail.com',
+    handle: 'anushkapalewar@gmail.com',
   },
 ];
 
@@ -33,7 +33,7 @@ const ContactSection = () => {
     <section id="contact" className="section-padding bg-card border-y-2 border-foreground overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -47,7 +47,7 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="max-w-3xl">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
