@@ -1,6 +1,12 @@
 import { Github, Mail, ArrowDown, ChevronRight } from 'lucide-react';
+import { scrollToSection } from '@/lib/utils';
 
 const HeroSection = () => {
+  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    scrollToSection(href);
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-background pt-20">
       <div className="container-custom">
@@ -48,7 +54,11 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#projects" className="brutalist-btn-primary flex items-center justify-center gap-2">
+            <a 
+              href="#projects" 
+              className="brutalist-btn-primary flex items-center justify-center gap-2"
+              onClick={(e) => handleCtaClick(e, '#projects')}
+            >
               <ChevronRight size={18} />
               view_projects
             </a>
@@ -61,7 +71,11 @@ const HeroSection = () => {
               <Github size={18} />
               github
             </a>
-            <a href="#contact" className="brutalist-btn flex items-center justify-center gap-2">
+            <a 
+              href="#contact" 
+              className="brutalist-btn flex items-center justify-center gap-2"
+              onClick={(e) => handleCtaClick(e, '#contact')}
+            >
               <Mail size={18} />
               contact_me
             </a>
@@ -79,3 +93,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

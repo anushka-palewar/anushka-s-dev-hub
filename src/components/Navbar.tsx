@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Terminal } from 'lucide-react';
+import { scrollToSection } from '@/lib/utils';
 
 const navLinks = [
   { name: 'about', href: '#about' },
@@ -21,6 +22,12 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    scrollToSection(href);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
@@ -32,7 +39,14 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 text-lg font-bold hover:text-primary transition-colors">
+          <a 
+            href="#" 
+            className="flex items-center gap-2 text-lg font-bold hover:text-primary transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
             <Terminal size={20} />
             <span>anushka_palewar</span>
           </a>
@@ -44,11 +58,16 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className="text-sm font-mono hover:text-primary transition-colors"
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {'>'} {link.name}
               </a>
             ))}
-            <a href="#contact" className="brutalist-btn-primary text-xs">
+            <a 
+              href="#contact" 
+              className="brutalist-btn-primary text-xs"
+              onClick={(e) => handleNavClick(e, '#contact')}
+            >
               hire_me()
             </a>
           </div>
@@ -71,7 +90,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className="py-3 px-4 font-mono hover:bg-muted transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                 >
                   {'>'} {link.name}
                 </a>
@@ -79,7 +98,7 @@ const Navbar = () => {
               <a
                 href="#contact"
                 className="brutalist-btn-primary text-center mt-4 text-sm"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, '#contact')}
               >
                 hire_me()
               </a>
@@ -92,3 +111,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
