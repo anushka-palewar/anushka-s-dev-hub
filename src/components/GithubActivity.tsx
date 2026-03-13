@@ -6,7 +6,7 @@ const GithubActivity = () => {
   const username = "anushka-palewar";
 
   return (
-    <motion.section 
+    <motion.section
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -24,7 +24,7 @@ const GithubActivity = () => {
 
         <div className="terminal-box bg-card p-8 flex flex-col items-center justify-center overflow-x-auto">
           <div className="min-w-full lg:min-w-[800px]">
-            <GitHubCalendar 
+            <GitHubCalendar
               username={username}
               blockSize={12}
               blockMargin={4}

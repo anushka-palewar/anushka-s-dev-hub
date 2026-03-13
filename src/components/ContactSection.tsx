@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, Code2, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Code2, Send, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
@@ -25,6 +25,12 @@ const socialLinks = [
     icon: Mail,
     href: 'mailto:anushkapalewar@gmail.com',
     handle: 'anushkapalewar@gmail.com',
+  },
+  {
+    name: 'Phone',
+    icon: Phone,
+    href: 'tel:+918888945190',
+    handle: '+91 8888945190',
   },
 ];
 
@@ -57,7 +63,7 @@ const ContactSection = () => {
             <p className="text-lg mb-6 font-mono">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
-            <a href="mailto:anushka@example.com" className="brutalist-btn-primary inline-flex items-center gap-2 group">
+            <a href="mailto:anushkapalewar@gmail.com" className="brutalist-btn-primary inline-flex items-center gap-2 group">
               <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               send_message()
             </a>

@@ -3,38 +3,44 @@ import { motion } from 'framer-motion';
 
 const skillCategories = [
   {
-    title: 'backend',
+    title: 'languages',
     icon: Server,
-    skills: ['Java (Core & Advanced)', 'Spring Boot', 'Spring Security', 'REST APIs', 'JDBC', 'Servlets & JSP'],
+    skills: ['Java', 'Python', 'C'],
   },
   {
     title: 'frontend',
     icon: Layout,
-    skills: ['HTML', 'CSS', 'JavaScript', 'React (Basics)'],
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js (Vite)'],
   },
   {
-    title: 'database',
-    icon: Database,
-    skills: ['SQL', 'MySQL'],
-  },
-  {
-    title: 'ml',
-    icon: Brain,
-    skills: ['ML Fundamentals', 'Text Preprocessing', 'TF-IDF', 'Naive Bayes', 'Flask Deployment'],
-  },
-  {
-    title: 'tools',
+    title: 'backend',
     icon: Settings,
-    skills: ['Data Structures & Algorithms', 'OOPs', 'DBMS', 'GitHub', 'VS Code'],
+    skills: ['Node.js', 'Express.js', 'Spring Boot', 'Spring Security', 'REST APIs'],
+  },
+  {
+    title: 'Databases',
+    icon: Database,
+    skills: ['MongoDB', 'MySQL', 'PostgreSQL'],
+  },
+  {
+    title: 'Tools',
+    icon: Database,
+    skills: ['GitHub', 'Postman', 'Power BI'],
+  },
+  {
+    title: 'specialized',
+    icon: Brain,
+    skills: ['Machine Learning', 'Data Structures & Algorithms'],
   },
 ];
+
 
 const SkillsSection = () => {
   return (
     <section id="skills" className="section-padding bg-background overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

@@ -8,6 +8,7 @@ const education = [
     location: 'Nagpur',
     period: '2023 – 2027',
     current: true,
+    percentage: 'CGPA: 9.39',
   },
   {
     degree: 'Higher Secondary Certificate (HSC)',
@@ -29,21 +30,30 @@ const achievements = [
     description: 'Internal Round Finalist',
   },
   {
-    title: 'Java Full-Stack Development',
-    description: 'Certification by Eduskills Academy',
+    title: 'LeetCode & CodeChef',
+    description: 'Solved 200+ DSA problems improving complex problem-solving skills',
   },
   {
-    title: 'Active LeetCode Problem Solver',
-    description: 'Continuously improving DSA skills',
+    title: 'Deep Learning (NVIDIA)',
+    description: 'Fundamentals of Deep Learning Certificate of Competency',
+  },
+  {
+    title: 'Full-Stack Certifications',
+    description: 'Eduskills Virtual Internship & Java Full Stack Development Specialist',
+  },
+  {
+    title: 'NSS & REEF Club',
+    description: 'Active member involved in community service and environmental sustainability initiatives. Participated in blood donation drives and campus environmental programs while collaborating with teams to create positive social impact.'
   },
 ];
+
 
 const EducationSection = () => {
   return (
     <section id="education" className="section-padding bg-background overflow-hidden border-b-2 border-foreground">
       <div className="container-custom">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

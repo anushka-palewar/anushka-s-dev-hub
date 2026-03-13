@@ -24,7 +24,7 @@ const AboutSection = () => {
     <section id="about" className="section-padding bg-card border-y-2 border-foreground overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -39,7 +39,7 @@ const AboutSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -47,18 +47,23 @@ const AboutSection = () => {
           >
             <p className="text-xs text-muted-foreground mb-4 font-mono">{'/* bio.md */'}</p>
             <div className="space-y-4 text-muted-foreground leading-relaxed font-mono">
+
               <p>
-                Hi, I'm <span className="text-foreground font-bold">Anushka Palewar</span>, a Computer Science Engineering student at RCOEM, Nagpur and an aspiring Java Spring Boot Full-Stack Developer.
+                Hi, I'm <span className="text-foreground font-bold">Anushka Palewar</span>, a Computer Science undergraduate at RCOEM, Nagpur, passionate about building modern web applications and solving real-world problems through technology.
               </p>
+
               <p>
-                I enjoy building scalable web applications and solving algorithmic problems. I have hands-on experience in <span className="text-primary">Java, Spring Boot, REST APIs, SQL</span>, and front-end technologies like <span className="text-primary">HTML, CSS, JavaScript, and React</span>.
+                I primarily work with <span className="text-primary">React, JavaScript, and modern frontend technologies</span> to build responsive and interactive user interfaces, while also developing scalable backend systems using <span className="text-primary">Node.js, Express, and Spring Boot</span>.
               </p>
+
               <p>
-                Along with full-stack development, I have worked on <span className="text-primary">Machine Learning projects</span>, applying concepts such as text preprocessing, feature extraction, and model deployment.
+                I enjoy transforming ideas into functional products and have developed projects including analytics dashboards, role-based platforms, and AI-powered tools by integrating <span className="text-primary">REST APIs, databases, and real-time data</span>.
               </p>
+
               <p>
-               I actively practice <span className="text-primary">Data Structures & Algorithms</span> on LeetCode and continuously work on improving my problem-solving skills.
+                Alongside development, I actively practice <span className="text-primary">Data Structures and Algorithms</span> on LeetCode and continuously explore areas like <span className="text-primary">machine learning, scalable backend systems, and modern web architecture</span>.
               </p>
+
             </div>
           </motion.div>
 
@@ -72,8 +77,8 @@ const AboutSection = () => {
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="terminal-box-sm bg-background group hover:translate-x-1 hover:-translate-y-1 transition-transform"
-                style={{ 
-                  boxShadow: `${4 + index}px ${4 + index}px 0 hsl(var(--foreground))` 
+                style={{
+                  boxShadow: `${4 + index}px ${4 + index}px 0 hsl(var(--foreground))`
                 }}
               >
                 <div className="flex items-start gap-4">

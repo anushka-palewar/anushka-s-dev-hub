@@ -42,24 +42,41 @@ const Terminal = () => {
         );
         break;
       case 'about':
-        output = "I'm Anushka Palewar, a CSE student and Java Spring Boot Developer.";
+        output = "Hi! I'm Anushka Palewar, a CSE student at RCOEM and an aspiring Full-Stack Developer specializing in Java Spring Boot and React.";
         scrollToSection('#about');
         break;
       case 'skills':
-        output = "My tech stack includes Java, Spring Boot, React, SQL, and ML Fundamentals.";
+        output = "Languages: Java, Python, C. Backend: Spring Boot, Node.js, Express. Frontend: React.js, HTML5, CSS3, JS. Databases: MySQL, PostgreSQL, MongoDB.";
         scrollToSection('#skills');
         break;
       case 'projects':
-        output = "I have built projects like NewsBuddy, Emotion Detection, and more.";
+        output = "Key Projects: Sankalp AI (Dream Visualization), ODOP Marketplace (Seller Portal), NewsBuddy (News Portal).";
         scrollToSection('#projects');
         break;
       case 'contact':
-        output = "You can reach me via email at anushka@example.com or LinkedIn.";
+        output = "Reach me at: anushkapalewar@gmail.com | LinkedIn: @anushka-palewar";
         scrollToSection('#contact');
         break;
       case 'resume':
-        output = "Opening resume...";
-        window.open('#', '_blank'); // Replace with actual resume link
+        output = (
+          <div className="flex flex-col gap-2">
+            <span>[SYSTEM] Preparing resume download...</span>
+            <a 
+              href="/resume.pdf" 
+              download="Anushka_Palewar_Resume.pdf"
+              className="text-primary underline font-bold"
+            >
+              Click here if download doesn't start automatically
+            </a>
+          </div>
+        );
+        // Note: Actual download depends on file existence in public folder
+        const link = document.createElement('a');
+        link.href = '/resume.pdf'; // Make sure to put your resume.pdf in the public folder
+        link.download = 'Anushka_Palewar_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
         break;
       case 'clear':
         setHistory([]);
@@ -71,6 +88,7 @@ const Terminal = () => {
       default:
         output = `Command not found: ${cmd}. Type 'help' for available commands.`;
     }
+
 
     setHistory([...history, { command: cmd, output }]);
     setInput('');

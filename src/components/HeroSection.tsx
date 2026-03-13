@@ -50,9 +50,11 @@ const HeroSection = () => {
                   options={{
                     strings: [
                       'Java Spring Boot Full-Stack Developer',
+                      'Node.js & Express.js Developer',
                       'Machine Learning Enthusiast',
                       'Problem Solver'
                     ],
+
                     autoStart: true,
                     loop: true,
                     delay: 50,
